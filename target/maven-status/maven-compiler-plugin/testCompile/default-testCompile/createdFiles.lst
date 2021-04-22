@@ -1,0 +1,5 @@
+com\choucair\test\EmpleosSteps\EmpleosSteps.class
+com\choucair\test\EmpleosObjects\EmpleosObjects.class
+com\choucair\test\RunnerFeatures.class
+com\choucair\test\AppTest.class
+com\choucair\test\definitions\EmpleosDefinitions.class
