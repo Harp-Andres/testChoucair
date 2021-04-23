@@ -27,7 +27,7 @@ public class EmpleosSteps{
 	}
 
 @Step
-	public void validoingreso() {
+	public void validoingreso() throws InterruptedException {
 		// TODO Auto-generated method stub
 		empleosobjects.validoingreso();
 	}
@@ -47,13 +47,13 @@ public class EmpleosSteps{
 	}
 
 @Step
-	public void botonregresar() {
+	public void botonregresar() throws InterruptedException {
 		// TODO Auto-generated method stub
 		empleosobjects.botonregresar();
 	}
 
 @Step
-	public void iconochoucair() {
+	public void iconochoucair() throws InterruptedException {
 		// TODO Auto-generated method stub
 		empleosobjects.iconochoucair();
 	}
@@ -87,9 +87,9 @@ public void realizarBusqueda() throws InterruptedException {
 	empleosobjects.realizarBusqueda();
 }
 @Step
-public void validarResultados(String cargo) throws InterruptedException {
+public void validarResultados() throws InterruptedException {
 	// TODO Auto-generated method stub
-	empleosobjects.validarResultados(cargo);
+	empleosobjects.validarResultados();
 }
 
 

@@ -45,48 +45,38 @@ public class EmpleosObjects extends PageObject {
 	static By listafiltrada  = By.xpath("//*[@id=\"content\"]/div/div/div/div/div/section[8]/div/div/div/div/div/div[3]/div/div/div/ul");
 	static By primeraeleccion  = By.xpath("//*[@id=\"content\"]/div/div/div/div/div/section[8]/div/div/div/div/div/div[3]/div/div/div/ul/li[1]/a");
 	
+	
+	
+	
+	
 	public void ingresoempleos() throws InterruptedException {
 		// TODO Auto-generated method stub
-		Thread.sleep(5000);
+		Thread.sleep(4000);
 		element(moduloempleos).click();
 		Thread.sleep(3000);
 		System.out.println("se dio el ingreso a empleos");
 	}
 
-	public void validoingreso() {
+	public void validoingreso() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 			if (find(Convocatorias).isVisible()) {
 				System.out.println("Se encontro el modulo empleos");
-				
+				Thread.sleep(3000);
 			}else{
 				
 				System.out.println("no se encontro el modulo empleos");
 			}
-			
-				
-				
-//			boolean present;
-//			try { driver.findElement(Convocatorias); 
-//			present = true; 
-//			System.out.println("Se encontro el modulo empleos");
-//		
-//			} catch (NoSuchElementException e) 
-//			{ present = false;
-//			System.out.println("no se encontro el modulo empleos");
-//			}
-
-			
-			
-			
-			
-
 		}
 		
+	
+	
+	
+	
 	public void navegarmodulo() throws  InterruptedException {
 		// TODO Auto-generated method stub
 		
-		Thread.sleep(4000);
+	
 		if (find(btncookies).isVisible()) {
 			System.out.println("Se encontro el boton cookies");
 			find(btncookies).click();
@@ -95,37 +85,35 @@ public class EmpleosObjects extends PageObject {
 			
 			System.out.println("no se encontro el boton cookie");
 		}
+		Thread.sleep(2000);
+		if (find(btnprepararse).isVisible()) {
+			find(btnprepararse).click();
+			System.out.println("Di click en boton prepararse");
+			
+		}
 		
-		find(btnprepararse).click();
-		Thread.sleep(5000);
-		
-
-		
+	
 		if (find(iconochoucair).isVisible()) {
 			System.out.println("Se encontro el icono de choucair navegando");
-			
+			Thread.sleep(2000);
 		}else{
 			
 			System.out.println("no se encontro el icono de choucair navegando");
 		}
-		
 
-	
 	}
 
 
 
-//	private void execute_script(ChromeDriver driver) {
-//		// TODO Auto-generated method stub
-//		driver = new ChromeDriver();
-//	}
 
-	public void botonregresar() {
+
+	public void botonregresar() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 if (find(btnregreso).isVisible()) {
 			
 			System.out.println("Se encontro el boton de regreso");
+			Thread.sleep(2000);
 			find(btnregreso).click();
 			System.out.println("Se retorno al inicio de la pagina con el boton");
 			
@@ -133,27 +121,28 @@ if (find(btnregreso).isVisible()) {
 			
 			System.out.println("no se encontro el boton de regreso");
 		}
-		
-		
 	}
 
 	
 	
 	
-	public void iconochoucair() {
+	public void iconochoucair() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		if (find(iconochoucair).isVisible()) {
 			System.out.println("Se encontro el icono de choucair navegando");
 			find(iconochoucair).click();
+			Thread.sleep(3000);
 			
 		}else{
 			
 			System.out.println("no se encontro el icono de choucair navegando");
 		}
-		
 	}
 
+	
+	
+	
 	public void retornomodulo() throws InterruptedException {
 		// TODO Auto-generated method stub
 		
@@ -162,11 +151,13 @@ if (find(btnregreso).isVisible()) {
 			Thread.sleep(3000);
 			find(moduloempleos).click();
 			System.out.println("Se retorna al modulo de empleos");
+			Thread.sleep(5000);
 		}else{
 			
 			System.out.println("no se encontro el eslogan de la pagina principal");
 			find(moduloempleos).click();
 			System.out.println("Se retorna al modulo de empleos");
+			Thread.sleep(3000);
 		}
 		
 		
@@ -183,8 +174,8 @@ if (find(btnregreso).isVisible()) {
 		
 		if (find(keyword).isVisible()) {
 			System.out.println("Se encontro el campo de cargo");
+			find(keyword).clear();
 			Thread.sleep(3000);
-//			find(keyword).click();
 			find(keyword).type(ocupacion);
 			Thread.sleep(3000);
 			System.out.println("Se ingreso la informacion en el campo del cargo");
@@ -205,8 +196,8 @@ if (find(btnregreso).isVisible()) {
 		
 		if (find(location).isVisible()) {
 			System.out.println("Se encontro el campo de cargo");
+			find(location).clear();
 			Thread.sleep(5000);
-//			find(keyword).click();
 			find(location).type(localidad);
 			Thread.sleep(5000);
 			System.out.println("Se ingreso la informacion en el campo del cargo");
@@ -230,9 +221,7 @@ if (find(btnregreso).isVisible()) {
 			Thread.sleep(2000);
 			find(btnbuscar).click();
 			System.out.println("Se dio click en el boton buscar");
-			
-		
-			
+
 		}else{
 			
 			System.out.println("no se pudo dar click en el boton buscar");
@@ -240,9 +229,10 @@ if (find(btnregreso).isVisible()) {
 		}
 	}
 
-	public void validarResultados(String cargo) throws InterruptedException {
+	
+	
+	public void validarResultados() throws InterruptedException {
 		// TODO Auto-generated method stub
-		
 		if (find(listafiltrada).isVisible()) {
 			  String opcListEmpleo = find(listafiltrada).getText();
 			     if (opcListEmpleo !="") {
@@ -250,27 +240,17 @@ if (find(btnregreso).isVisible()) {
 			    	 find(primeraeleccion).click();
 			    	 Thread.sleep(8000);
 			    	 find(moduloempleos).click();
-			    	 
+			    		Thread.sleep(5000); 
 				 }else {
 			 		 System.out.println("no se encuentraron resultados en la busqueda");
 				 }       
-			Thread.sleep(1000);
 
-			
 		}else{
 			
 			System.out.println("no se pudo enmcontrar la lista");
 
 		}
-		
-	
-		   
-		
-		
-		
-		
-		
-		
+
 	}
 
 }

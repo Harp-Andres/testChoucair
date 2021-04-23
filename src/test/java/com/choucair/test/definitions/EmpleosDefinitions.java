@@ -23,14 +23,14 @@ public void que_requiero_ingresar_al_sitio_web() throws Throwable {
 }
 
 
-@When("^estando en el sitio web ingreso a el modulo empleos$")
+@And("^estando en el sitio web ingreso a el modulo empleos$")
 public void estando_en_el_sitio_web_ingreso_a_el_modulo_empleos() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
    // throw new PendingException();
 	empleossteps.ingresoempleos();
 }
 
-@Then("^valido el ingreso al modulo empleos$")
+@And("^valido el ingreso al modulo empleos$")
 public void valido_el_ingreso_al_modulo_empleos() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
     //throw new PendingException();
@@ -42,7 +42,7 @@ public void valido_el_ingreso_al_modulo_empleos() throws Throwable {
 
 
 
-@And("^se requiere ver el panel superior al navegar en el modulo$")
+@When("^se requiere ver el panel superior al navegar en el modulo$")
 public void que_se_requiere_ver_el_panel_superior_al_navegar_en_el_modulo() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
     //throw new PendingException();
@@ -75,14 +75,14 @@ public void valido_que_luego_del_flujo_ingrese_nuevamene_a_empleos() throws Thro
 
 
 
-@And("^ingresar mi ocupacion  \"([^\"]*)\"$")
+
+@When("^ingresar mi ocupacion  \"([^\"]*)\"$")
 public void ingresar_mi_ocupacion(String ocupacion) throws Throwable {
     // Write code here that turns the phrase above into concrete actions
    // throw new PendingException();
 	empleossteps.ingresarOcupacion(ocupacion);
 	
 }
-
 
 
 
@@ -103,15 +103,13 @@ public void realizar_busqueda() throws Throwable {
 }
 
 
-@Then("^valido resultados de empleos  \"([^\"]*)\" en la  busqueda$")
-public void valido_resultados_de_empleos_en_la_busqueda(String cargo) throws Throwable {
+
+@Then("^valido resultados de empleos en la  busqueda$")
+public void valido_resultados_de_empleos_en_la_busqueda() throws Throwable {
     // Write code here that turns the phrase above into concrete actions
     //throw new PendingException();
-	empleossteps.validarResultados(cargo);
+    empleossteps.validarResultados();
 }
-
-
-
 
 
 
